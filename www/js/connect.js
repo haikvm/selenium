@@ -77,6 +77,9 @@ $.Class('CCONNECT', {
 									beforeSend: function() {
 										cl.beforeSend();
 									},
+                  xhrFields: {
+                    withCredentials: true
+                  },
 									xhr: function() {
 										var xhr = new window.XMLHttpRequest();
 										xhr.addEventListener("progress", function(evt){
@@ -108,7 +111,7 @@ $.Class('CCONNECT', {
 												if (response) {
 													success(response);
 													if (request != 'preload_resources' && request != '/user/authorize') {
-														db.saveData(hash, response);
+														//db.saveData(hash, response);
 													}
 												} else {
 													success(res.data);

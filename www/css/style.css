@@ -304,6 +304,12 @@
     font-weight: bold;
     font-style: italic;
 }
+body, html {
+    min-height: 100%;
+}
+.app_content {
+    height: 100%;
+}
 body * {
 	-webkit-appearance: none;
 }
@@ -316,6 +322,12 @@ body {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: 0;
 }
 .success {
 	margin:50% auto;

@@ -1,0 +1,16 @@
+{
+    "ios": {
+        "debug": {
+            "buildFlag": [
+                "-quiet",
+                "LANG=en_US.UTF-8"
+            ]
+        },
+        "release": {
+            "buildFlag": [
+                "-quiet",
+                "LANG=en_US.UTF-8"
+            ]
+        }
+    }
+}

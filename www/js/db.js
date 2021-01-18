@@ -14,6 +14,7 @@ $.Class('CDB', {
 			tx.executeSql('CREATE TABLE IF NOT EXISTS assets (date TEXT, type TEXT, code TEXT, data TEXT)');
 			tx.executeSql('CREATE TABLE IF NOT EXISTS templates (date TEXT, code TEXT, data TEXT)');
 			tx.executeSql('CREATE TABLE IF NOT EXISTS data (date TEXT, code TEXT, data TEXT)');
+			tx.executeSql('CREATE TABLE IF NOT EXISTS searched (date TEXT, code TEXT, data TEXT)');
 			tx.executeSql('SELECT * FROM settings WHERE code=?', ['FIRST_RUN'], function(txx, res) {
 				if (res.rows.length == 0) tx.executeSql("INSERT INTO settings (date, code, data) VALUES (?,?,?)", [time, 'FIRST_RUN', 'Y']);
 			});
@@ -154,6 +155,35 @@ $.Class('CDB', {
 				} else {
 					if (success) success(false);
 				}
+			});
+		}, function(tx, err) {
+			console.error(err);
+		});
+	},
+	getSearched: function(success) {
+		this.db.transaction(function(tx) {
+			tx.executeSql('SELECT * FROM searched ORDER BY rowid desc', [], function(tx, res) {
+				if (res.rows.length > 0) {
+					var data = new Object();
+					for (n=0; n<res.rows.length; n++) {
+						data[res.rows.item(n).code] = $.parseJSON(res.rows.item(n).data);
+					}
+					if (success) success(data);
+				} else {
+					if (success) success(false);
+				}
+			});
+		}, function(tx, err) {
+			console.error(err);
+		});
+	},
+	saveSearched: function(name, data) {
+		date = new Date();
+		time = Math.round(date.getTime()/1000);
+		this.db.transaction(function(tx) {
+			tx.executeSql('SELECT * FROM searched WHERE code=?', [name], function(txx, res) {
+				if (res.rows.length > 0) tx.executeSql("UPDATE searched SET date=?, data=? WHERE code=?", [time, JSON.stringify(data), name]);
+					else tx.executeSql("INSERT INTO searched (date, code, data) VALUES (?,?,?)", [time, name, JSON.stringify(data)]);
 			});
 		}, function(tx, err) {
 			console.error(err);
