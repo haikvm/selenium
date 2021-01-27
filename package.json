@@ -23,7 +23,6 @@
             "cordova-plugin-clipboard-x": {},
             "cordova-plugin-listpicker": {},
             "cordova-plugin-keyboard": {},
-            "cordova-plugin-datepicker": {},
             "cordova-custom-config": {},
             "cordova-plugin-wkwebview-cookie-sync": {},
             "cordova-plugin-wkwebview-inject-cookie": {},
@@ -32,7 +31,12 @@
                 "FACEID_USAGE_DESCRIPTION": "For easy authentication"
             },
             "cordova-plugin-wkwebview-file-xhr": {},
-            "cordova-plugin-secure-storage": {}
+            "cordova-plugin-secure-storage": {},
+            "onesignal-cordova-plugin": {},
+            "cordova-plugin-native-keyboard": {},
+            "cordova-plugin-webviewcolor": {},
+            "cordova-plugin-theme-detection": {},
+            "cordova-plugin-datepicker-unified": {}
         }
     },
     "dependencies": {
@@ -56,20 +60,25 @@
         "cordova-plugin-clipboard-x": "",
         "cordova-plugin-listpicker": "",
         "cordova-plugin-keyboard": "",
-        "cordova-plugin-datepicker": "",
         "cordova-custom-config": "5.1.0",
         "cordova-plugin-wkwebview-cookie-sync": "",
         "cordova-plugin-wkwebview-inject-cookie": "",
         "cordova-plugin-keychain-touch-id": "",
         "cordova-plugin-fingerprint-aio": "",
         "cordova-plugin-wkwebview-file-xhr": "",
-        "cordova-plugin-secure-storage": ""
+        "cordova-plugin-secure-storage": "",
+        "onesignal-cordova-plugin": "2.7.0",
+        "cordova-plugin-native-keyboard": "",
+        "cordova-plugin-webviewcolor": "",
+        "cordova-plugin-theme-detection": "",
+        "cordova-plugin-datepicker-unified": ""
     },
     "scripts": {
         "monaca:preview": "npm run dev",
         "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081"
     },
     "devDependencies": {
-        "browser-sync": "^2.24.5"
+        "browser-sync": "^2.24.5",
+        "cordova": "^10.0.0"
     }
 }

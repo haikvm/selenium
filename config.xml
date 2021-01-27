@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" id="ru.hoztorgr.app" version="0.0.5">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" id="ru.hoztorgr.app" version="0.2.1">
   <name>ХозТорг</name>
   <description>Оптовая продажа сантехники и хозтоваров</description>
   <author href="http://moxie-lab.ru" email="support@moxie-lab.ru">
@@ -32,6 +32,9 @@
     <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
       <string>Мы используем доступ к камере, для сканирования штрихкода</string>
     </edit-config>
+    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+      <string>Мы используем ваше местоположение, чтобы предлагать вам наиболее релевантный ассортимент</string>
+    </edit-config>
     <preference name="orientation" value="portrait"/>
     <icon src="/res/ios/icon/icon.png" width="57" height="57"/>
     <icon src="/res/ios/icon/icon@2x.png" width="114" height="114"/>
@@ -54,8 +57,8 @@
     <icon src="/res/ios/icon/icon-83.5@2x~ipad.png" width="167" height="167"/>
     <preference name="scheme" value="monaca-app"/>
     <preference name="hostname" value="localhost"/>
-    <icon src="/res/ios/icon/icon-1024.png" width="1024" height="1024"/>
     <splash src="/res/ios/screen/Default@2x~universal~anyany.png"/>
+    <icon src="/res/ios/icon/icon-1024.png" width="1024" height="1024"/>
     <config-file platform="ios" parent="CFBundleLocalizations" target="*-Info.plist">
       <array>
         <string>ru</string>
@@ -65,20 +68,21 @@
   </platform>
   <platform name="android">
     <preference name="android-targetSdkVersion" value="29"/>
-    <icon src="/res/android/icon/mdpi.png" density="mdpi"/>
-    <icon src="/res/android/icon/hdpi.png" density="hdpi"/>
-    <icon src="/res/android/icon/xhdpi.png" density="xhdpi"/>
-    <icon src="/res/android/icon/xxhdpi.png" density="xxhdpi"/>
-    <icon src="/res/android/icon/xxxhdpi.png" density="xxxhdpi"/>
-    <icon src="/res/android/icon/ldpi.png" density="ldpi"/>
+    <resource-file src="res/values/colors.xml" target="/app/src/main/res/values/colors.xml"/>
+    <icon background="@color/background" density="ldpi" foreground="/res/android/icon/ldpi-foreground.png"/>
+    <icon background="@color/background" density="mdpi" foreground="/res/android/icon/mdpi-foreground.png"/>
+    <icon background="@color/background" density="hdpi" foreground="/res/android/icon/hdpi-foreground.png"/>
+    <icon background="@color/background" density="xhdpi" foreground="/res/android/icon/xhdpi-foreground.png"/>
+    <icon background="@color/background" density="xxhdpi" foreground="/res/android/icon/xxhdpi-foreground.png"/>
+    <icon background="@color/background" density="xxxhdpi" foreground="/res/android/icon/xxxhdpi-foreground.png"/>
     <splash src="/res/android/screen/splash-mdpi.png" density="mdpi"/>
     <splash src="/res/android/screen/splash-port-xxhdpi.png" density="port-xxhdpi"/>
     <splash src="/res/android/screen/splash-port-xhdpi.png" density="port-xhdpi"/>
     <splash src="/res/android/screen/splash-port-hdpi.png" density="port-hdpi"/>
     <splash src="/res/android/screen/splash-port-mdpi.png" density="port-mdpi"/>
     <splash src="/res/android/screen/splash-port-ldpi.png" density="port-ldpi"/>
-    <preference name="AndroidXEnabled" value="true"/>
     <splash src="/res/android/screen/splash-port-xxxhdpi.png" density="port-xxxhdpi"/>
+    <preference name="AndroidXEnabled" value="true"/>
   </platform>
   <platform name="electron">
     <icon src="/res/electron/icon/icon_electron_512.png" width="512" height="512"/>
@@ -90,11 +94,6 @@
   <preference name="ios-XCBuildConfiguration-TARGETED_DEVICE_FAMILY" value="1,2"/>
   <preference name="WindowsStorePublisherName" value="My Name"/>
   <preference name="WindowsStoreIdentityName" value="c319fa15-5e04-8954-59d9-1c0f1debe59f"/>
-  <preference name="KeepRunning" value="true"/>
-  <preference name="monaca:AndroidIsPackageNameSeparate" value="false"/>
-  <preference name="Orientation" value="default"/>
-  <preference name="SplashScreenDelay" value="1000"/>
-  <preference name="Fullscreen" value="false"/>
   <preference name="SplashScreenBackgroundColor" value="#464646"/>
   <preference name="monaca:MonacaBackendUrl" value="https://cloud.monaca.mobi/json-rpc/"/>
   <preference name="monaca:MonacaBackendId" value="5ffdefede788851278be661a"/>
@@ -103,7 +102,12 @@
   <preference name="AutoHideSplashScreen" value="true"/>
   <preference name="FadeSplashScreen" value="true"/>
   <preference name="ShowSplashScreenSpinner" value="true"/>
-  <access origin="*"/>
-  <preference name="DisallowOverscroll" value="true"/>
   <preference name="EnableViewportScale" value="false"/>
+  <access origin="*"/>
+  <preference name="KeepRunning" value="true"/>
+  <preference name="monaca:AndroidIsPackageNameSeparate" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="Orientation" value="default"/>
+  <preference name="SplashScreenDelay" value="1000"/>
+  <preference name="Fullscreen" value="false"/>
 </widget>
