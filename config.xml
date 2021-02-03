@@ -35,7 +35,6 @@
     <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
       <string>Мы используем ваше местоположение, чтобы предлагать вам наиболее релевантный ассортимент</string>
     </edit-config>
-    <preference name="orientation" value="portrait"/>
     <icon src="/res/ios/icon/icon.png" width="57" height="57"/>
     <icon src="/res/ios/icon/icon@2x.png" width="114" height="114"/>
     <icon src="/res/ios/icon/icon-72.png" width="72" height="72"/>
