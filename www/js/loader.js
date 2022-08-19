@@ -91,11 +91,10 @@ function print_r(arr, level) {
 }
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-  if (device.platform == 'iOS') {
-    wkWebView.injectCookie('hoztorgr.ru/app/', function() {}, function() {});
-  }
+    if (device.platform == 'iOS') {
+        //wkWebView.injectCookie('tkyarmarka.com/app/', function() {}, function() {});
+    }
 	$(function() {
-		
       window.db = new CDB();
       window.connect = new CCONNECT();
       window.loader = new CLOADER(function(templates) {
@@ -104,7 +103,7 @@ function onDeviceReady() {
 	});
 	window.RECIEVED_PUSH_DATA = '';
 	if (!noDevice) {
-    
+    /*
 		window.plugins.OneSignal
 			.startInit("811e7329-e35b-47a4-b1a2-caf032101e6a")
 			.inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
@@ -115,7 +114,7 @@ function onDeviceReady() {
 				initPushData(pushdata, 'received');
 			})
 			.endInit();	
-      
+    */ 
 	}
 
 }

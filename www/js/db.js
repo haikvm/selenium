@@ -3,11 +3,11 @@ $.Class('CDB', {
 		var date = new Date();
 		var time = Math.round(date.getTime()/1000);
 		if (device.platform == 'Android') {
-			this.db = window.openDatabase('hoztorgr', '', 'Application Database', 10485760); 
+			this.db = window.openDatabase('yarmarka', '', 'Application Database', 10485760); 
 		} else if (device.platform == 'chrome') {
-			this.db = window.openDatabase('hoztorgr', '', 'Application Database', 10485760); 
+			this.db = window.openDatabase('yarmarka', '', 'Application Database', 10485760); 
 		} else {
-			this.db = window.sqlitePlugin.openDatabase({name: 'hoztorgr.db', iosDatabaseLocation: 'default'});
+			this.db = window.sqlitePlugin.openDatabase({name: 'yarmarka.db', iosDatabaseLocation: 'default'});
 		}
 		this.db.transaction(function(tx) {
 			tx.executeSql('CREATE TABLE IF NOT EXISTS settings (date TEXT, code TEXT, data TEXT)');

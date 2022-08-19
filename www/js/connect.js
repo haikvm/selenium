@@ -1,6 +1,6 @@
 $.Class('CCONNECT', {
 	init: function() {
-		this.url = 'https://hoztorgr.ru/app/api.php';
+		this.url = 'https://tkyarmarka.com/app/api.php';
 		this.version = '2.1.0';
 		this.appOnline = true;
 		this.onConnectBefore = new Event('onConnectBefore');

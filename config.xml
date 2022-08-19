@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" id="ru.hoztorgr.app" version="0.2.1">
-  <name>ХозТорг</name>
-  <description>Оптовая продажа сантехники и хозтоваров</description>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" id="com.tkyarmarka.app" version="0.1.6">
+  <name>Ярмарка</name>
+  <description>Оптовая продажа детских товаров и продуктов питания</description>
   <author href="http://moxie-lab.ru" email="support@moxie-lab.ru">
         Moxie-Lab
   </author>
@@ -56,8 +56,8 @@
     <icon src="/res/ios/icon/icon-83.5@2x~ipad.png" width="167" height="167"/>
     <preference name="scheme" value="monaca-app"/>
     <preference name="hostname" value="localhost"/>
-    <splash src="/res/ios/screen/Default@2x~universal~anyany.png"/>
     <icon src="/res/ios/icon/icon-1024.png" width="1024" height="1024"/>
+    <splash src="/res/ios/screen/Default@2x~universal~anyany.png"/>
     <config-file platform="ios" parent="CFBundleLocalizations" target="*-Info.plist">
       <array>
         <string>ru</string>
@@ -66,48 +66,37 @@
     </config-file>
   </platform>
   <platform name="android">
-    <preference name="android-targetSdkVersion" value="29"/>
-	<!--
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+      <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round"/>
+    </edit-config>
+    <resource-file src="res/android/values/ic_launcher_background.xml" target="app/src/main/res/values/ic_launcher_background.xml"/>
+    <resource-file src="res/android/values/ic_launcher_background.xml" target="app/src/main/res/drawable/ic_launcher_background.xml"/>
     <resource-file src="res/values/colors.xml" target="/app/src/main/res/values/colors.xml"/>
-    <icon background="@color/background" density="ldpi" foreground="/res/android/icon/ldpi-foreground.png"/>
-    <icon background="@color/background" density="mdpi" foreground="/res/android/icon/mdpi-foreground.png"/>
-    <icon background="@color/background" density="hdpi" foreground="/res/android/icon/hdpi-foreground.png"/>
-    <icon background="@color/background" density="xhdpi" foreground="/res/android/icon/xhdpi-foreground.png"/>
-    <icon background="@color/background" density="xxhdpi" foreground="/res/android/icon/xxhdpi-foreground.png"/>
-    <icon background="@color/background" density="xxxhdpi" foreground="/res/android/icon/xxxhdpi-foreground.png"/>
-	-->
-	
-	<edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-		<application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" />
-	</edit-config>
-	<resource-file src="res/android/values/ic_launcher_background.xml" target="app/src/main/res/drawable/ic_launcher_background.xml" />
-	<resource-file src="res/android/mipmap-anydpi-v26/ic_launcher.xml" target="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
-	<resource-file src="res/android/mipmap-anydpi-v26/ic_launcher_round.xml" target="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" />
-	<resource-file src="res/android/mipmap-ldpi/ic_launcher.png" target="app/src/main/res/mipmap-ldpi/ic_launcher.png" />
-	<resource-file src="res/android/mipmap-hdpi/ic_launcher.png" target="app/src/main/res/mipmap-hdpi/ic_launcher.png" />
-	<resource-file src="res/android/mipmap-hdpi/ic_launcher_round.png" target="app/src/main/res/mipmap-hdpi/ic_launcher_round.png" />
-	<resource-file src="res/android/mipmap-hdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" />
-	<resource-file src="res/android/mipmap-mdpi/ic_launcher.png" target="app/src/main/res/mipmap-mdpi/ic_launcher.png" />
-	<resource-file src="res/android/mipmap-mdpi/ic_launcher_round.png" target="app/src/main/res/mipmap-mdpi/ic_launcher_round.png" />
-	<resource-file src="res/android/mipmap-mdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" />
-	<resource-file src="res/android/mipmap-xhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
-	<resource-file src="res/android/mipmap-xhdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" />
-	<resource-file src="res/android/mipmap-xhdpi/ic_launcher_round.png" target="app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" />
-	<resource-file src="res/android/mipmap-xxhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
-	<resource-file src="res/android/mipmap-xxhdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" />
-	<resource-file src="res/android/mipmap-xxhdpi/ic_launcher_round.png" target="app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" />
-	<resource-file src="res/android/mipmap-xxxhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
-	<resource-file src="res/android/mipmap-xxxhdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" />
-	<resource-file src="res/android/mipmap-xxxhdpi/ic_launcher_round.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" />
-	
-    <splash src="/res/android/screen/splash-mdpi.png" density="mdpi"/>
-    <splash src="/res/android/screen/splash-port-xxhdpi.png" density="port-xxhdpi"/>
-    <splash src="/res/android/screen/splash-port-xhdpi.png" density="port-xhdpi"/>
-    <splash src="/res/android/screen/splash-port-hdpi.png" density="port-hdpi"/>
-    <splash src="/res/android/screen/splash-port-mdpi.png" density="port-mdpi"/>
+    <resource-file src="res/android/mipmap-anydpi-v26/ic_launcher.xml" target="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"/>
+    <resource-file src="res/android/mipmap-anydpi-v26/ic_launcher_round.xml" target="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"/>
+    <resource-file src="res/android/mipmap-ldpi/ic_launcher.png" target="app/src/main/res/mipmap-ldpi/ic_launcher.png"/>
+    <resource-file src="res/android/mipmap-hdpi/ic_launcher.png" target="app/src/main/res/mipmap-hdpi/ic_launcher.png"/>
+    <resource-file src="res/android/mipmap-hdpi/ic_launcher_round.png" target="app/src/main/res/mipmap-hdpi/ic_launcher_round.png"/>
+    <resource-file src="res/android/mipmap-mdpi/ic_launcher.png" target="app/src/main/res/mipmap-mdpi/ic_launcher.png"/>
+    <resource-file src="res/android/mipmap-mdpi/ic_launcher_round.png" target="app/src/main/res/mipmap-mdpi/ic_launcher_round.png"/>
+    <resource-file src="res/android/mipmap-xhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xhdpi/ic_launcher.png"/>
+    <resource-file src="res/android/mipmap-xhdpi/ic_launcher_round.png" target="app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"/>
+    <resource-file src="res/android/mipmap-xxhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xxhdpi/ic_launcher.png"/>
+    <resource-file src="res/android/mipmap-xxhdpi/ic_launcher_round.png" target="app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"/>
+    <resource-file src="res/android/mipmap-xxxhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"/>
+    <resource-file src="res/android/mipmap-xxxhdpi/ic_launcher_round.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"/>
+    <icon background="@color/background" density="mdpi" foreground="res/android/mipmap-mdpi/ic_launcher_foreground.png"/>
+    <icon background="@color/background" density="hdpi" foreground="res/android/mipmap-hdpi/ic_launcher_foreground.png"/>
+    <icon background="@color/background" density="xhdpi" foreground="res/android/mipmap-xhdpi/ic_launcher_foreground.png"/>
+    <icon background="@color/background" density="xxhdpi" foreground="res/android/mipmap-xxhdpi/ic_launcher_foreground.png"/>
+    <icon background="@color/background" density="xxxhdpi" foreground="res/android/mipmap-xxxhdpi/ic_launcher_foreground.png"/>
     <splash src="/res/android/screen/splash-port-ldpi.png" density="port-ldpi"/>
+    <splash src="/res/android/screen/splash-port-mdpi.png" density="port-mdpi"/>
+    <splash src="/res/android/screen/splash-port-hdpi.png" density="port-hdpi"/>
+    <splash src="/res/android/screen/splash-port-xhdpi.png" density="port-xhdpi"/>
+    <splash src="/res/android/screen/splash-port-xxhdpi.png" density="port-xxhdpi"/>
     <splash src="/res/android/screen/splash-port-xxxhdpi.png" density="port-xxxhdpi"/>
-    <preference name="AndroidXEnabled" value="true"/>
+    <splash src="/res/android/screen/splash-mdpi.png" density="mdpi"/>
   </platform>
   <platform name="electron">
     <icon src="/res/electron/icon/icon_electron_512.png" width="512" height="512"/>
@@ -123,7 +112,7 @@
   <preference name="monaca:MonacaBackendUrl" value="https://cloud.monaca.mobi/json-rpc/"/>
   <preference name="monaca:MonacaBackendId" value="5ffdefede788851278be661a"/>
   <preference name="monaca:MonacaBackendApiKey" value="7873498cac9344181baeb6fd2234adc6a04747d90e2965045b751531ad387cce"/>
-  <preference name="target-device" value="universal"/>
+  <preference name="target-device" value="handset"/>
   <preference name="AutoHideSplashScreen" value="true"/>
   <preference name="FadeSplashScreen" value="true"/>
   <preference name="ShowSplashScreenSpinner" value="true"/>
