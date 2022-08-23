@@ -69,20 +69,19 @@
     <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
       <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round"/>
     </edit-config>
-    <resource-file src="res/android/values/ic_launcher_background.xml" target="app/src/main/res/values/ic_launcher_background.xml"/>
-    <resource-file src="res/android/values/ic_launcher_background.xml" target="app/src/main/res/drawable/ic_launcher_background.xml"/>
-    <resource-file src="res/values/colors.xml" target="/app/src/main/res/values/colors.xml"/>
-    <resource-file src="res/android/mipmap-anydpi-v26/ic_launcher.xml" target="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"/>
-    <resource-file src="res/android/mipmap-hdpi/ic_launcher.png" target="app/src/main/res/mipmap-hdpi/ic_launcher.png"/>
-    <resource-file src="res/android/mipmap-mdpi/ic_launcher.png" target="app/src/main/res/mipmap-mdpi/ic_launcher.png"/>
-    <resource-file src="res/android/mipmap-xhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xhdpi/ic_launcher.png"/>
-    <resource-file src="res/android/mipmap-xxhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xxhdpi/ic_launcher.png"/>
-    <resource-file src="res/android/mipmap-xxxhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"/>
-    <icon background="@color/background" density="mdpi" foreground="res/android/mipmap-mdpi/ic_launcher_foreground.png"/>
-    <icon background="@color/background" density="hdpi" foreground="res/android/mipmap-hdpi/ic_launcher_foreground.png"/>
-    <icon background="@color/background" density="xhdpi" foreground="res/android/mipmap-xhdpi/ic_launcher_foreground.png"/>
-    <icon background="@color/background" density="xxhdpi" foreground="res/android/mipmap-xxhdpi/ic_launcher_foreground.png"/>
-    <icon background="@color/background" density="xxxhdpi" foreground="res/android/mipmap-xxxhdpi/ic_launcher_foreground.png"/>
+    <resource-file src="res/android/icons/mipmap-anydpi-v26/ic_launcher.xml" target="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"/>
+    <resource-file src="res/android/icons/mipmap-hdpi/ic_launcher.png" target="app/src/main/res/mipmap-hdpi/ic_launcher.png"/>
+    <resource-file src="res/android/icons/mipmap-mdpi/ic_launcher.png" target="app/src/main/res/mipmap-mdpi/ic_launcher.png"/>
+    <resource-file src="res/android/icons/mipmap-xhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xhdpi/ic_launcher.png"/>
+    <resource-file src="res/android/icons/mipmap-xxhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xxhdpi/ic_launcher.png"/>
+    <resource-file src="res/android/icons/mipmap-xxxhdpi/ic_launcher.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"/>
+    
+	<icon background="@color/background" density="mdpi" foreground="res/android/icons/mipmap-mdpi/ic_launcher_foreground.png"/>
+    <icon background="@color/background" density="hdpi" foreground="res/android/icons/mipmap-hdpi/ic_launcher_foreground.png"/>
+    <icon background="@color/background" density="xhdpi" foreground="res/android/icons/mipmap-xhdpi/ic_launcher_foreground.png"/>
+    <icon background="@color/background" density="xxhdpi" foreground="res/android/icons/mipmap-xxhdpi/ic_launcher_foreground.png"/>
+    <icon background="@color/background" density="xxxhdpi" foreground="res/android/icons/mipmap-xxxhdpi/ic_launcher_foreground.png"/>
+	
     <splash src="/res/android/screen/splash-port-ldpi.png" density="port-ldpi"/>
     <splash src="/res/android/screen/splash-port-mdpi.png" density="port-mdpi"/>
     <splash src="/res/android/screen/splash-port-hdpi.png" density="port-hdpi"/>
@@ -91,13 +90,7 @@
     <splash src="/res/android/screen/splash-port-xxxhdpi.png" density="port-xxxhdpi"/>
     <splash src="/res/android/screen/splash-mdpi.png" density="mdpi"/>
   </platform>
-  <platform name="electron">
-    <icon src="/res/electron/icon/icon_electron_512.png" width="512" height="512"/>
-    <preference name="SplashScreenWidth" value="620"/>
-    <preference name="SplashScreenHeight" value="300"/>
-    <preference name="ShowSplashScreen" value="false"/>
-    <splash src="/res/electron/screen/electron_splash_image.png" width="620" height="300"/>
-  </platform>
+
   <preference name="ios-XCBuildConfiguration-TARGETED_DEVICE_FAMILY" value="1,2"/>
   <preference name="WindowsStorePublisherName" value="My Name"/>
   <preference name="WindowsStoreIdentityName" value="c319fa15-5e04-8954-59d9-1c0f1debe59f"/>
